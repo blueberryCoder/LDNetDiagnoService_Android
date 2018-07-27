@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+apply plugin: "com.android.application"
+
+android {
+
+    compileSdkVersion 26
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.netease.ldnetdiagnoservice_android"
+        minSdkVersion 21
+        targetSdkVersion 26
+
+
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+
+            manifest.srcFile 'AndroidManifest.xml'
+
+            res.srcDirs 'res'
+        }
+
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
